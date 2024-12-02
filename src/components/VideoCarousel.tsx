@@ -76,9 +76,12 @@ const VideoCarousel = () => {
       // animate the progress of the videos
       const animation = gsap.to(span[videoId], {
         onUpdate: () => {
-          const progress = Math.floor(animation.progress() * 100);
+          const progress =
+            videoRef.current[videoId].currentTime /
+            highlightsSlides[videoId].videoDuration;
+
           if (progress !== currentProgress) {
-            currentProgress = progress;
+            currentProgress = progress * 100;
             gsap.to(videoDivRef.current[videoId], {
               width: window.innerWidth < 1200 ? '10vw' : '4vw',
             });
@@ -112,7 +115,6 @@ const VideoCarousel = () => {
       if (isPlaying) {
         gsap.ticker.add(animationUpdate);
       } else {
-        animation.pause();
         gsap.ticker.remove(animationUpdate);
       }
     }
