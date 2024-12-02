@@ -20,6 +20,9 @@ export default {
         },
         zinc: '#101010',
       },
+      screens: {
+        xs: '425px',
+      },
     },
   },
   plugins: [],
