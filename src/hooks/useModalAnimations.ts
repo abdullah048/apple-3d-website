@@ -1,11 +1,11 @@
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
-const useHeroAnimations = () => {
+const useModalAnimations = () => {
   useGSAP(() => {
-    gsap.to('#hero-text', { opacity: 1, delay: 2.5 });
+    gsap.to('#modal-heading', { opacity: 1, y: 0 });
     gsap.to('#call-to-action', { opacity: 1, delay: 2.5, y: -50 });
   }, []);
 };
 
-export default useHeroAnimations;
+export default useModalAnimations;

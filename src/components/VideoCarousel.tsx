@@ -1,7 +1,5 @@
 'use client';
 
-// 2:09:00
-
 import { highlightsSlides } from '@/constants';
 import { pauseImg, playImg, replayImg } from '@/utils';
 import { useGSAP } from '@gsap/react';
